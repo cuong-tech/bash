@@ -24,12 +24,12 @@ __bobby_clock() {
 function prompt_command() {
     #PS1="${bold_cyan}$(scm_char)${green}$(scm_prompt_info)${yellow}$(ruby_version_prompt) ${yellow}\h ${reset_color}in ${green}\w ${reset_color}\n${green}→${reset_color} "
     #PS1="\n$(battery_char) $(__bobby_clock) ${yellow}\h ${reset_color}in ${green}\w\n${bold_cyan}$(scm_prompt_char_info) ${green}→${reset_color} "
-    PS1="\n$(battery_char)${yellow}\h${red}→${blue}\w $(scm_prompt_char_info)\n$(clock_prompt) $(clock_char) ${reset_color} "
+    PS1="\n$(battery_char)${yellow}\h${red}→${blue}\w $(scm_prompt_char_info)\n$(clock_prompt) $(clock_char)${reset_color}  "
 }
 
 THEME_SHOW_CLOCK_CHAR=${THEME_SHOW_CLOCK_CHAR:-"true"}
 THEME_CLOCK_CHAR_COLOR=${THEME_CLOCK_CHAR_COLOR:-"$red"}
 THEME_CLOCK_COLOR=${THEME_CLOCK_COLOR:-"$bold_cyan"}
-THEME_CLOCK_FORMAT=${THEME_CLOCK_FORMAT:-"%Y-%m-%d %H:%M:%S"}
+THEME_CLOCK_FORMAT=${THEME_CLOCK_FORMAT:-"%H:%M:%S"}
 
 safe_append_prompt_command prompt_command
